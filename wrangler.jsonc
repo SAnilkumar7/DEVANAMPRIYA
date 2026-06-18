@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dhamma-legacy-web",
+  "compatibility_date": "2026-06-13",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "./dist/server/server.js",
+  "build": {
+    "command": "bun run build"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "./dist/client"
+  }
+}
