@@ -165,7 +165,6 @@ import ambedkar from "../assets/about-ambedkar.jpg";
 import stupa from "../assets/hero-stupa.jpg";
 import heroBuddha from "../assets/Bodh Gaya.jpg";
 import heroAshoka from "../assets/hero-ashoka.jpg";
-import community from "../assets/hero-community.jpg";
 import krishana from "../assets/Kushinagar.jpg";
 import AjantaCaves from "../assets/Ajanta Caves.jpg";
 import nalanda from "../assets/nalanda.jpg";
