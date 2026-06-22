@@ -131,9 +131,9 @@ function Home() {
               },
               {
                 img: aboutAshoka,
-                name: "Emperor Ashoka",
+                name: "Emperor Samrat Ashok",
                 role: "Devanampriya · 304 – 232 BCE",
-                desc: "The warrior king who chose Dhamma over conquest, carrying the Buddha's message of peace across Asia through his edicts.",
+                desc: "The warrior king who chose Dhamma over conquest, carrying the Buddha's message of peace across Asia through his edicts.Emperor Ashoka built 86,000 Buddhist viharas across India.",
               },
               {
                 img: aboutAmbedkar,
@@ -153,7 +153,7 @@ function Home() {
                           src={p.img}
                           alt={p.name}
                           loading="lazy"
-                          className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105 md:aspect-[4/5]"
+                          className="aspect-[3/5] w-full object-cover transition duration-700 group-hover:scale-105 md:aspect-[3/5]"
                         />
                       </div>
                     </div>
@@ -172,29 +172,19 @@ function Home() {
           <div className="mx-auto grid max-w-2xl grid-cols-2 gap-6 sm:gap-10">
             {[
               {
-                img: community,
-                name: "Founder",
-                role: "Founder, Devanampriya",
-                desc: "Lit the first lamp of this movement.",
+                name: "Shri Shanmukha",
+                role: "Founder",
+                desc: "A visionary leader and social reformer, established the organisation to promote Dhamma and social justice.",
               },
               {
-                img: education,
-                name: "Head",
-                role: "President & Head",
-                desc: "Guides the organisation today.",
+                name: "Shri Vijay Prasad.P",
+                role: "Head & Creative Director",
+                desc: "Guides the organisation's vision and initiatives, ensuring alignment with the principles of Dhamma and compassion.",
               },
             ].map((p, i) => (
               <Reveal key={p.name} delay={i * 0.1}>
                 <article className="group text-center">
-                  <div className="mx-auto w-32 overflow-hidden rounded-full shadow-[var(--shadow-elegant)] ring-4 ring-[var(--gold-soft)] sm:w-40">
-                    <img
-                      src={p.img}
-                      alt={p.name}
-                      loading="lazy"
-                      className="aspect-square w-full object-cover transition duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <h3 className="mt-4 text-base font-semibold md:text-lg">{p.name}</h3>
+                  <h3 className="text-base font-semibold md:text-lg">{p.name}</h3>
                   <p className="mt-1 text-[0.6rem] uppercase tracking-[0.18em] text-[var(--gold)]/90 sm:text-[0.65rem]">{p.role}</p>
                   <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">{p.desc}</p>
                 </article>
@@ -248,7 +238,34 @@ function Home() {
       </section>
 
       {/* GALLERY */}
-      <section className="bg-secondary/40 py-24 md:py-32">
+      {/* GALLERY - Natural sizes (wide, tall, square all preserved) */}
+<section className="bg-secondary/40 py-24 md:py-32">
+  <div className="container-page">
+    <Reveal><SectionHeading eyebrow="Glimpses" title="Moments of compassion, captured in light." subtitle="A visual journal of our service, our people and the communities we walk beside." /></Reveal>
+    
+    {/* ✅ Removed all aspect-ratio constraints - images show in their natural size */}
+    <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-3">
+      {GALLERY.map((g, i) => (
+        <Reveal key={i} delay={i * 0.05}>
+          <div className="group relative overflow-hidden rounded-2xl">
+            <img 
+              src={g.img} 
+              alt="" 
+              loading="lazy" 
+              className="w-full transition duration-700 group-hover:scale-105" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--royal-deep)]/80 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
+          </div>
+        </Reveal>
+      ))}
+    </div>
+    
+    <div className="mt-10 text-center">
+      <Link to="/gallery" className="btn-primary"><ArrowRight className="h-4 w-4" /> Explore Full Gallery</Link>
+    </div>
+  </div>
+</section>
+      {/* <section className="bg-secondary/40 py-24 md:py-32">
         <div className="container-page">
           <Reveal><SectionHeading eyebrow="Glimpses" title="Moments of compassion, captured in light." subtitle="A visual journal of our service, our people and the communities we walk beside." /></Reveal>
           <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-3">
@@ -265,7 +282,7 @@ function Home() {
             <Link to="/gallery" className="btn-primary"><ArrowRight className="h-4 w-4" /> Explore Full Gallery</Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* TESTIMONIALS */}
       <section className="bg-background py-24 md:py-32">
