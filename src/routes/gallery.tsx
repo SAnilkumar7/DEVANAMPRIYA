@@ -193,7 +193,7 @@ import community from "../assets/social.jpg";
 import Religious from "../assets/Religious.jpg";
 import education from "../assets/youth.jpg";
 import education1 from "../assets/industdevelopments.jpg";
-import Event1 from "../assets/Event1.jpg";
+import Event1 from "../assets/event1.jpg";
 import Event from "../assets/Event.jpg";
 import buddha from "../assets/program.jpg";
 import buddha1 from "../assets/program1.jpg";
