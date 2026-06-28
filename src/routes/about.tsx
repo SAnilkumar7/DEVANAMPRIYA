@@ -172,8 +172,8 @@ import nalanda from "../assets/nalanda.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — DEVANAMPRIYA | Buddha, Ashoka & Ambedkar" },
-      { name: "description", content: "The story behind Devanampriya — inspired by Lord Buddha, Emperor Ashoka and Dr. B.R. Ambedkar." },
+      { title: "About - DEVANAMPRIYA | Buddha, Ashoka & Ambedkar" },
+      { name: "description", content: "The story behind Devanampriya - inspired by Lord Buddha, Emperor Ashoka and Dr. B.R. Ambedkar." },
       { property: "og:title", content: "About DEVANAMPRIYA" },
       { property: "og:description", content: "Our roots in Dhamma, history and the vision of equality." },
       { property: "og:url", content: "/about" },
@@ -190,22 +190,22 @@ const FIGURES = [
     img: buddha,
     intro: "The Awakened One who showed the Middle Path — a life of wisdom, ethics and meditation, free from extremes.",
     points: [
-      "The Four Noble Truths — the nature and cessation of suffering.",
-      "The Noble Eightfold Path — right view, intention, speech, action, livelihood, effort, mindfulness and concentration.",
-      "Universal compassion — Metta extended to all beings, without distinction.",
+      "The Four Noble Truths - the nature and cessation of suffering.",
+      "The Noble Eightfold Path - right view, intention, speech, action, livelihood, effort, mindfulness and concentration.",
+      "Universal compassion - Metta extended to all beings, without distinction.",
     ],
     quote: "Hatred is never appeased by hatred. It is appeased by love alone.",
   },
   {
-    name: "Emperor Ashoka",
+    name: "Chakravarthi ashok samrat",
     era: "304 – 232 BCE",
     img: ashoka,
-    intro: "After Kalinga, the warrior king became Devanampriya — Beloved of the Gods — choosing Dhamma over conquest.",
+    intro: "After Kalinga, the warrior king became Devanampriya - Beloved of the Gods — choosing Dhamma over conquest.",
     points: [
-      "Transformation after the Kalinga War — renouncing violence forever.",
+      "Transformation after the Kalinga War - renouncing violence forever.",
       "Spread Buddhism across Asia through emissaries and his children.",
-      "The Ashoka Pillars and Edicts — the world's first proclamation of universal welfare.",
-      "Emperor Ashoka built 86,000 Buddhist viharas across India.",
+      "The Ashoka Pillars and Edicts - the world's first proclamation of universal welfare.",
+      "Samrat Ashok built 84,000 Buddhist viharas across India.",
     ],
     quote: "All men are my children. I desire for my children their welfare and happiness.",
   },
@@ -216,7 +216,7 @@ const FIGURES = [
     intro: "Architect of the Indian Constitution and modern apostle of equality, who revived Buddhism for millions.",
     points: [
       "Lifelong struggle for the dignity and rights of the marginalised.",
-      "Drafted the Constitution of India — a charter of liberty, equality and fraternity.",
+      "Drafted the Constitution of India - a charter of liberty, equality and fraternity.",
       "Embraced Buddhism in 1956, leading the great Dhamma revival.",
     ],
     quote: "Cultivation of mind should be the ultimate aim of human existence.",
@@ -281,9 +281,9 @@ function AboutPage() {
           <Reveal>
             <span className="eyebrow">Our Story</span>
             <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-[1.05] text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              Three voices across <span className="text-gradient-gold">two and a half millennia</span> — one timeless message.
+              Three voices across <span className="text-gradient-gold">two and a half millennia</span>  one timeless message.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-white/80">From the Buddha's enlightenment to Ashoka's transformation to Ambedkar's awakening — we carry forward a living tradition of compassion and justice.</p>
+            <p className="mt-6 max-w-2xl text-lg text-white/80">From the Buddha's enlightenment to Ashoka's transformation to Ambedkar's awakening - we carry forward a living tradition of compassion and justice.</p>
           </Reveal>
         </div>
       </section>

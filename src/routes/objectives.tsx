@@ -6,9 +6,9 @@ import buddha from "../assets/hero-buddha.jpg";
 export const Route = createFileRoute("/objectives")({
   head: () => ({
     meta: [
-      { title: "Objectives — DEVANAMPRIYA" },
-      { name: "description", content: "Our eight guiding objectives — from compassion and equality to youth empowerment and community welfare." },
-      { property: "og:title", content: "Our Objectives — DEVANAMPRIYA" },
+      { title: "Objectives - DEVANAMPRIYA" },
+      { name: "description", content: "Our eight guiding objectives - from compassion and equality to youth empowerment and community welfare." },
+      { property: "og:title", content: "Our Objectives - DEVANAMPRIYA" },
       { property: "og:description", content: "The pillars that shape our action." },
       { property: "og:url", content: "/objectives" },
     ],
@@ -18,14 +18,14 @@ export const Route = createFileRoute("/objectives")({
 });
 
 const OBJECTIVES = [
-  { icon: HandHeart, title: "Promote Compassion", desc: "Embedding Metta and Karuna in everyday life — through service, listening and unconditional care." },
-  { icon: Scale, title: "Encourage Equality", desc: "Standing firmly against caste, class and gender discrimination — for a dignified life for all." },
-  { icon: Sparkles, title: "Spread Dhamma", desc: "Making the Buddha's wisdom accessible — through study circles, retreats and publications." },
-  { icon: Users, title: "Build Brotherhood", desc: "Strengthening Sangha — the community of friends walking the path together." },
+  { icon: HandHeart, title: "Promote Compassion", desc: "Embedding Metta and Karuna in everyday life - through service, listening and unconditional care." },
+  { icon: Scale, title: "Encourage Equality", desc: "Standing firmly against caste, class and gender discrimination - for a dignified life for all." },
+  { icon: Sparkles, title: "Spread Dhamma", desc: "Making the Buddha's wisdom accessible - through study circles, retreats and publications." },
+  { icon: Users, title: "Build Brotherhood", desc: "Strengthening Sangha - the community of friends walking the path together." },
   { icon: GraduationCap, title: "Youth Empowerment", desc: "Leadership, ethics and skills programmes that prepare the next generation of change-makers." },
-  { icon: BookOpen, title: "Educational Support", desc: "Scholarships, libraries and rural schools — because education is the great equaliser." },
-  { icon: Building2, title: "Community Development", desc: "Health camps, water, sanitation and livelihoods — the foundations of human flourishing." },
-  { icon: HeartHandshake, title: "Social Welfare", desc: "Care for elders, widows, orphans and the differently-abled — leaving no one behind." },
+  { icon: BookOpen, title: "Educational Support", desc: "Scholarships, libraries and rural schools - because education is the great equaliser." },
+  { icon: Building2, title: "Community Development", desc: "Health camps, water, sanitation and livelihoods - the foundations of human flourishing." },
+  { icon: HeartHandshake, title: "Social Welfare", desc: "Care for elders, widows, orphans and the differently-abled - leaving no one behind." },
 ];
 
 function ObjectivesPage() {
@@ -38,7 +38,7 @@ function ObjectivesPage() {
           <Reveal>
             <span className="eyebrow">What we stand for</span>
             <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-[1.05] text-white sm:text-5xl md:text-6xl">Eight pillars of <span className="text-gradient-gold">our promise.</span></h1>
-            <p className="mt-5 max-w-2xl text-lg text-white/80">Each objective is a vow — a commitment to live and serve in the spirit of Dhamma.</p>
+            <p className="mt-5 max-w-2xl text-lg text-white/80">Each objective is a vow - a commitment to live and serve in the spirit of Dhamma.</p>
           </Reveal>
         </div>
       </section>

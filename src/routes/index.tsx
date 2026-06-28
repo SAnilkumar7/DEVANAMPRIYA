@@ -19,9 +19,9 @@ import buddha from "../assets/hero-buddha.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DEVANAMPRIYA — Dhamma • Humanity • Equality" },
+      { title: "DEVANAMPRIYA - Dhamma • Humanity • Equality" },
       { name: "description", content: "An NGO inspired by Lord Buddha and Dr. B.R. Ambedkar — promoting compassion, equality and social justice." },
-      { property: "og:title", content: "DEVANAMPRIYA — Dhamma • Humanity • Equality" },
+      { property: "og:title", content: "DEVANAMPRIYA - Dhamma • Humanity • Equality" },
       { property: "og:description", content: "Join us in building a peaceful, just and compassionate society." },
       { property: "og:url", content: "/" },
     ],
@@ -87,9 +87,10 @@ const GALLERY = [
 ];
 
 const TESTIMONIALS = [
-  { name: "Meera Joshi", role: "Teacher, Nagpur", text: "Devanampriya's education programme gave my students new wings. The values of compassion and equality run through every lesson." },
-  { name: "Rohit Kamble", role: "Volunteer", text: "Walking with this team taught me what real service means. We don't just help — we listen, learn, and grow together." },
-  { name: "Sunita Pawar", role: "Community Leader", text: "Their welfare work has rebuilt trust in our village. The dignity they restore is greater than any donation could measure." },
+  { name: "Shanmukha", role: "Community Leader", text: "Their welfare work has rebuilt trust in our village. The dignity they restore is greater than any donation could measure." },
+  { name: "Vijay Prasad.P", role: "Creative Director", text: "Walking with this team taught me what real service means. We don't just help - we listen, learn, and grow together." },
+  { name: "Meera Joshi", role: "Teacher, Raichur", text: "Devanampriya's education programme gave my students new wings. The values of compassion and equality run through every lesson." },
+
 ];
 
 function Home() {
@@ -102,7 +103,7 @@ function Home() {
         <div className="container-page space-y-16">
           <Reveal>
             <div className="mx-auto max-w-3xl text-center">
-              <SectionHeading center eyebrow="About Devanampriya" title="A movement rooted in Dhamma, devoted to humanity." subtitle="We are dedicated to spreading the principles of Dhamma, equality, compassion, brotherhood and social justice — inspired by Lord Buddha, Emperor Ashoka and Dr. B.R. Ambedkar." />
+              <SectionHeading center eyebrow="About Devanampriya" title="A movement rooted in Dhamma, devoted to humanity." subtitle="We are dedicated to spreading the principles of Dhamma, equality, compassion, brotherhood and social justice , inspired by Lord Buddha, Samrat Ashok and Dr. B.R. Ambedkar." className="[&_.eyebrow]:before:hidden" />
               <div className="mt-10 grid gap-4 sm:grid-cols-2">
                 {[
                   ["Wisdom in Action", "Translating ancient teaching into everyday service."],
@@ -127,13 +128,13 @@ function Home() {
                 img: aboutBuddha,
                 name: "Lord Buddha",
                 role: "The Awakened One · 563 – 483 BCE",
-                desc: "Showed the Middle Path of wisdom, ethics and meditation — teaching universal compassion and the end of suffering.",
+                desc: "Showed the Middle Path of wisdom, ethics and meditation - teaching universal compassion and the end of suffering.",
               },
               {
                 img: aboutAshoka,
-                name: "Emperor Samrat Ashok",
+                name: "Chakravarthi Ashok Samrat",
                 role: "Devanampriya · 304 – 232 BCE",
-                desc: "The warrior king who chose Dhamma over conquest, carrying the Buddha's message of peace across Asia through his edicts.Emperor Ashoka built 86,000 Buddhist viharas across India.",
+                desc: "The warrior king who chose Dhamma over conquest, carrying the Buddha's message of peace across Asia through his edicts.Emperor Ashoka built 84,000 Buddhist viharas across India.",
               },
               {
                 img: aboutAmbedkar,

@@ -68,9 +68,13 @@ function DonatePage() {
           Your Gift Lights the <span className="text-gradient-gold">Path of Dhamma</span>
         </motion.h1>
         <p className="mx-auto mt-4 max-w-2xl text-white/85 md:text-lg">
-          Every contribution funds education, compassion drives, and social
-          justice programs. Choose a way to give below.
-        </p>
+        Every contribution funds education, compassion drives, and social
+        justice programs. Choose a way to give below.
+        <br />
+        <span className="text-gradient-gold font-semibold">
+          "Benefits for Taxpayers through 12A, 80G & DARPAN"
+        </span>
+      </p>
       </section>
 
       {/* Donation card */}

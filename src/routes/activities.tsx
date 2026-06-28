@@ -203,6 +203,212 @@
 
 
 
+// import { createFileRoute } from "@tanstack/react-router";
+// import { useState, useEffect, useCallback, useRef } from "react";
+// import { Reveal, SectionHeading } from "../components/Reveal";
+// import { CheckCircle2, Loader2, Calendar, ChevronLeft, ChevronRight, X } from "lucide-react";
+// import { motion, AnimatePresence } from "framer-motion";
+
+
+// import youth from "../assets/youth.jpg";
+// import industry from "../assets/industdevelopments.jpg";
+// import women from "../assets/women.jpg";
+// import ashoka from "../assets/hero-ashoka.jpg";
+// import buddha from "../assets/hero-buddha.jpg";
+// import aboutBuddha from "../assets/about-buddha.jpg";
+// import Religious from "../assets/Religious.jpg";
+// import Social from "../assets/social.jpg";
+
+// export const Route = createFileRoute("/activities")({
+//   head: () => ({
+//     meta: [
+//       { title: "Activities — DEVANAMPRIYA" },
+//       { name: "description", content: "Completed, ongoing and upcoming activities of DEVANAMPRIYA NGO." },
+//       { property: "og:title", content: "Activities — DEVANAMPRIYA" },
+//       { property: "og:description", content: "Programmes, impact and the road ahead." },
+//       { property: "og:url", content: "/activities" },
+//     ],
+//     links: [{ rel: "canonical", href: "/activities" }],
+//   }),
+//   component: ActivitiesPage,
+// });
+
+// type Item = { img: string; title: string; date?: string; text: string };
+
+// const COMPLETED: Item[] = [
+//   { img: youth, date: "2023 – 2024", title: "Youth Skill Development", text: "    Empowering young minds with practical skills, values, and opportunities  for a dignified and self-reliant future." },
+//   { img: industry, date: "2023", title: "Industry Development", text: "Equipped individuals with industry skills, training, and opportunities to foster employment and economic growth." },
+//   { img: women, date: "2022 – 2023", title: "Women Empowerment", text: "Women empowerment workshops inspired hundreds of women to become self-reliant leaders, creating lasting social and economic impact in their communities." },
+//   { img: Social, date: "2022", title: "Social Culture", text: "A community gathering celebrating social harmony, cultural heritage, and the values of equality, education, and empowerment." },
+//   { img: Religious, date: "2021", title: "Religious and Cultural Event", text: "A spiritual gathering promoting the teachings of the Buddha, compassion, wisdom, and harmony within the community." },
+// ];
+
+// const ONGOING: Item[] = [
+//   { img: industry, title: "Dhamma Pathshala", text: "Weekend ethics and Pali story-telling classes in 18 rural schools. Children learn the Pancasila not as rules, but as ways of being kinder to those around them." },
+//   { img: youth, title: "Wellness on Wheels", text: "A mobile health van reaching remote tribal hamlets every fortnight — basic check-ups, free medicines, maternal counselling and referrals for serious cases." },
+//   { img: ashoka, title: "Constitution Literacy Workshops", text: "Saturday workshops on fundamental rights, duties and the Preamble for first-time voters in colleges and ITI centres across Maharashtra and Madhya Pradesh." },
+//   { img: aboutBuddha, title: "Free Dhamma Library Vans", text: "Two travelling libraries carrying 1,000+ titles on Buddhism, the Constitution and Indian social reform — parking at one village school every Sunday." },
+// ];
+
+// const FUTURE = [
+//   { date: "Q1 2026", title: "Buddhist Studies Library", text: "A reference library and quiet reading room in Nagpur — open to all, free for students and researchers." },
+//   { date: "Q2 2026", title: "Youth Leadership Academy", text: "A six-month residential programme in ethics-driven leadership for young changemakers from underserved districts." },
+//   { date: "Q3 2026", title: "Rural Skill Centres", text: "Three vocational training centres for women in Vidarbha — tailoring, digital literacy and small-business basics." },
+//   { date: "Q4 2026", title: "International Dhamma Conference", text: "A global gathering of monks, scholars and activists in Sarnath, marking a decade of DEVANAMPRIYA's work." },
+// ];
+
+// function useSwipe(length: number) {
+//   const [idx, setIdx] = useState(0);
+//   const prev = useCallback(() => setIdx((i) => (i - 1 + length) % length), [length]);
+//   const next = useCallback(() => setIdx((i) => (i + 1) % length), [length]);
+//   return { idx, setIdx, prev, next };
+// }
+
+// function Carousel({ items, accent, onOpen }: { items: Item[]; accent: "completed" | "ongoing"; onOpen: (i: number) => void }) {
+//   const { idx, setIdx, prev, next } = useSwipe(items.length);
+//   const startX = useRef<number | null>(null);
+
+//   const onTouchStart = (e: React.TouchEvent) => { startX.current = e.touches[0].clientX; };
+//   const onTouchEnd = (e: React.TouchEvent) => {
+//     if (startX.current === null) return;
+//     const dx = e.changedTouches[0].clientX - startX.current;
+//     if (dx > 50) prev();
+//     else if (dx < -50) next();
+//     startX.current = null;
+//   };
+
+//   return (
+//     <div className="relative mt-10">
+//       <div className="overflow-hidden rounded-2xl border border-border bg-card" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+//         <div className="flex transition-transform duration-500 ease-out" style={{ transform: `translateX(-${idx * 100}%)` }}>
+//           {items.map((it, i) => (
+//             <article key={it.title} className="grid w-full shrink-0 gap-0 md:grid-cols-2">
+//               <button onClick={() => onOpen(i)} className="group relative block w-full overflow-hidden md:h-full">
+//                 <img 
+//                   src={it.img} 
+//                   alt={it.title} 
+//                   className="h-full w-full object-contain bg-card" 
+//                 />
+//                 <span className={`absolute left-4 top-4 inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ${accent === "completed" ? "bg-[var(--gold)] text-[var(--royal-deep)]" : "bg-[var(--royal)] text-white"}`}>
+//                   {accent === "completed" ? <><CheckCircle2 className="h-3.5 w-3.5" /> Completed</> : <><Loader2 className="h-3.5 w-3.5 animate-spin" /> Ongoing</>}
+//                 </span>
+//                 <span className="absolute bottom-3 right-3 rounded-full bg-black/60 px-3 py-1 text-[11px] text-white">Tap to enlarge</span>
+//               </button>
+//               <div className="flex flex-col justify-center gap-3 p-6 md:p-10">
+//                 {it.date && <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{it.date}</div>}
+//                 <h3 className="text-2xl font-semibold leading-tight md:text-3xl">{it.title}</h3>
+//                 <p className="text-base leading-relaxed text-muted-foreground">{it.text}</p>
+//                 <div className="mt-2 text-xs text-muted-foreground">{i + 1} / {items.length} · Swipe or use arrows</div>
+//               </div>
+//             </article>
+//           ))}
+//         </div>
+//       </div>
+
+//       <button onClick={prev} aria-label="Previous" className="absolute left-2 top-1/2 -translate-y-1/2 grid h-11 w-11 place-items-center rounded-full bg-background/90 border border-border shadow-md hover:bg-background md:-left-5">
+//         <ChevronLeft className="h-5 w-5" />
+//       </button>
+//       <button onClick={next} aria-label="Next" className="absolute right-2 top-1/2 -translate-y-1/2 grid h-11 w-11 place-items-center rounded-full bg-background/90 border border-border shadow-md hover:bg-background md:-right-5">
+//         <ChevronRight className="h-5 w-5" />
+//       </button>
+
+//       <div className="mt-5 flex justify-center gap-2">
+//         {items.map((_, i) => (
+//           <button key={i} onClick={() => setIdx(i)} aria-label={`Go to ${i + 1}`} className={`h-2 rounded-full transition-all ${i === idx ? "w-8 bg-[var(--royal)]" : "w-2 bg-border"}`} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// function ActivitiesPage() {
+//   const [lightbox, setLightbox] = useState<Item | null>(null);
+
+//   useEffect(() => {
+//     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setLightbox(null); };
+//     window.addEventListener("keydown", onKey);
+//     return () => window.removeEventListener("keydown", onKey);
+//   }, []);
+
+//   return (
+//     <>
+//       <section className="relative flex min-h-[50vh] items-end overflow-hidden bg-[var(--royal-deep)] pt-32 pb-20 text-white">
+//         <img src={youth} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" />
+//         <div className="absolute inset-0 bg-gradient-to-t from-[var(--royal-deep)] to-[var(--royal-deep)]/50" />
+//         <div className="container-page relative">
+//           <Reveal>
+//             <span className="eyebrow">Our work</span>
+//             <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.05] text-white sm:text-5xl md:text-6xl">From <span className="text-gradient-gold">vision</span> to action, day by day.</h1>
+//           </Reveal>
+//         </div>
+//       </section>
+
+//       <section className="bg-background py-20 md:py-24">
+//         <div className="container-page">
+//           <Reveal><SectionHeading eyebrow="Completed" title="Programmes that have already lit the path" subtitle="Swipe through the work our community has carried out — every image tells the story of an idea that became real." /></Reveal>
+//           <Carousel items={COMPLETED} accent="completed" onOpen={(i) => setLightbox(COMPLETED[i])} />
+//         </div>
+//       </section>
+
+//       <section className="bg-secondary/40 py-20 md:py-24">
+//         <div className="container-page">
+//           <Reveal><SectionHeading eyebrow="Ongoing" title="Walking the path right now" subtitle="The programmes we are running this season — quiet, steady, every week." /></Reveal>
+//           <Carousel items={ONGOING} accent="ongoing" onOpen={(i) => setLightbox(ONGOING[i])} />
+//         </div>
+//       </section>
+
+//       <section className="bg-background py-20 md:py-24">
+//         <div className="container-page">
+//           <Reveal><SectionHeading eyebrow="Future" title="The road we are paving" /></Reveal>
+//           <div className="relative mt-14">
+//             <div className="absolute left-4 top-0 bottom-0 w-px bg-border md:left-1/2" />
+//             <div className="space-y-10">
+//               {FUTURE.map((f, i) => (
+//                 <Reveal key={f.title} delay={i * 0.08}>
+//                   <div className={`relative grid gap-4 md:grid-cols-2 md:gap-12 ${i % 2 === 0 ? "" : "md:[&>div:first-child]:order-2"}`}>
+//                     <div className="pl-12 md:pl-0 md:pr-12 md:text-right">
+//                       <span className="inline-flex items-center gap-1 rounded-full bg-[var(--royal)] px-3 py-1 text-xs font-semibold text-white"><Calendar className="h-3 w-3" /> {f.date}</span>
+//                       <h3 className="mt-3 text-xl font-semibold">{f.title}</h3>
+//                       <p className="mt-2 text-sm text-muted-foreground">{f.text}</p>
+//                     </div>
+//                     <div />
+//                     <span className="absolute left-4 top-2 grid h-3 w-3 -translate-x-1/2 place-items-center rounded-full bg-[var(--gold)] ring-4 ring-background md:left-1/2" />
+//                   </div>
+//                 </Reveal>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       <AnimatePresence>
+//         {lightbox && (
+//           <motion.div
+//             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+//             className="fixed inset-0 z-[100] grid place-items-center bg-black/90 p-4"
+//             onClick={() => setLightbox(null)}
+//           >
+//             <button onClick={() => setLightbox(null)} aria-label="Close" className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white hover:bg-white/20">
+//               <X className="h-5 w-5" />
+//             </button>
+//             <motion.div
+//               initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
+//               className="max-h-[90vh] max-w-5xl" onClick={(e) => e.stopPropagation()}
+//             >
+//               <img src={lightbox.img} alt={lightbox.title} className="mx-auto max-h-[75vh] max-w-full w-auto h-auto rounded-xl object-contain" />
+//               <p className="mt-3 text-center text-sm text-white/80">{lightbox.title}</p>
+//             </motion.div>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </>
+//   );
+// }
+
+
+
+
+
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useCallback, useRef } from "react";
 import { Reveal, SectionHeading } from "../components/Reveal";
@@ -222,9 +428,9 @@ import Social from "../assets/social.jpg";
 export const Route = createFileRoute("/activities")({
   head: () => ({
     meta: [
-      { title: "Activities — DEVANAMPRIYA" },
+      { title: "Activities - DEVANAMPRIYA" },
       { name: "description", content: "Completed, ongoing and upcoming activities of DEVANAMPRIYA NGO." },
-      { property: "og:title", content: "Activities — DEVANAMPRIYA" },
+      { property: "og:title", content: "Activities - DEVANAMPRIYA" },
       { property: "og:description", content: "Programmes, impact and the road ahead." },
       { property: "og:url", content: "/activities" },
     ],
@@ -237,7 +443,7 @@ type Item = { img: string; title: string; date?: string; text: string };
 
 const COMPLETED: Item[] = [
   { img: youth, date: "2023 – 2024", title: "Youth Skill Development", text: "    Empowering young minds with practical skills, values, and opportunities  for a dignified and self-reliant future." },
-  { img: industry, date: "2023", title: "Industry Development", text: "Equipped individuals with industry skills, training, and opportunities to foster employment and economic growth." },
+  { img: industry, date: "2023", title: "Industrial Training", text: "Equipped individuals with industry skills, training, and opportunities to foster employment and economic growth." },
   { img: women, date: "2022 – 2023", title: "Women Empowerment", text: "Women empowerment workshops inspired hundreds of women to become self-reliant leaders, creating lasting social and economic impact in their communities." },
   { img: Social, date: "2022", title: "Social Culture", text: "A community gathering celebrating social harmony, cultural heritage, and the values of equality, education, and empowerment." },
   { img: Religious, date: "2021", title: "Religious and Cultural Event", text: "A spiritual gathering promoting the teachings of the Buddha, compassion, wisdom, and harmony within the community." },
@@ -245,15 +451,15 @@ const COMPLETED: Item[] = [
 
 const ONGOING: Item[] = [
   { img: industry, title: "Dhamma Pathshala", text: "Weekend ethics and Pali story-telling classes in 18 rural schools. Children learn the Pancasila not as rules, but as ways of being kinder to those around them." },
-  { img: youth, title: "Wellness on Wheels", text: "A mobile health van reaching remote tribal hamlets every fortnight — basic check-ups, free medicines, maternal counselling and referrals for serious cases." },
+  { img: youth, title: "Wellness on Wheels", text: "A mobile health van reaching remote tribal hamlets every fortnight - basic check-ups, free medicines, maternal counselling and referrals for serious cases." },
   { img: ashoka, title: "Constitution Literacy Workshops", text: "Saturday workshops on fundamental rights, duties and the Preamble for first-time voters in colleges and ITI centres across Maharashtra and Madhya Pradesh." },
   { img: aboutBuddha, title: "Free Dhamma Library Vans", text: "Two travelling libraries carrying 1,000+ titles on Buddhism, the Constitution and Indian social reform — parking at one village school every Sunday." },
 ];
 
 const FUTURE = [
-  { date: "Q1 2026", title: "Buddhist Studies Library", text: "A reference library and quiet reading room in Nagpur — open to all, free for students and researchers." },
+  { date: "Q1 2026", title: "Buddhist Studies Library", text: "A reference library and quiet reading room in Nagpur - open to all, free for students and researchers." },
   { date: "Q2 2026", title: "Youth Leadership Academy", text: "A six-month residential programme in ethics-driven leadership for young changemakers from underserved districts." },
-  { date: "Q3 2026", title: "Rural Skill Centres", text: "Three vocational training centres for women in Vidarbha — tailoring, digital literacy and small-business basics." },
+  { date: "Q3 2026", title: "Rural Skill Centres", text: "Three vocational training centres for women in Vidarbha - tailoring, digital literacy and small-business basics." },
   { date: "Q4 2026", title: "International Dhamma Conference", text: "A global gathering of monks, scholars and activists in Sarnath, marking a decade of DEVANAMPRIYA's work." },
 ];
 
@@ -278,7 +484,7 @@ function Carousel({ items, accent, onOpen }: { items: Item[]; accent: "completed
   };
 
   return (
-    <div className="relative mt-10">
+    <div className="relative mt-10 px-4 sm:px-0">
       <div className="overflow-hidden rounded-2xl border border-border bg-card" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         <div className="flex transition-transform duration-500 ease-out" style={{ transform: `translateX(-${idx * 100}%)` }}>
           {items.map((it, i) => (
@@ -294,10 +500,10 @@ function Carousel({ items, accent, onOpen }: { items: Item[]; accent: "completed
                 </span>
                 <span className="absolute bottom-3 right-3 rounded-full bg-black/60 px-3 py-1 text-[11px] text-white">Tap to enlarge</span>
               </button>
-              <div className="flex flex-col justify-center gap-3 p-6 md:p-10">
+              <div className="flex flex-col justify-center gap-3 px-4 py-6 sm:p-6 md:p-10">
                 {it.date && <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{it.date}</div>}
-                <h3 className="text-2xl font-semibold leading-tight md:text-3xl">{it.title}</h3>
-                <p className="text-base leading-relaxed text-muted-foreground">{it.text}</p>
+                <h3 className="text-xl font-semibold leading-tight sm:text-2xl md:text-3xl">{it.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">{it.text}</p>
                 <div className="mt-2 text-xs text-muted-foreground">{i + 1} / {items.length} · Swipe or use arrows</div>
               </div>
             </article>
@@ -305,11 +511,19 @@ function Carousel({ items, accent, onOpen }: { items: Item[]; accent: "completed
         </div>
       </div>
 
-      <button onClick={prev} aria-label="Previous" className="absolute left-2 top-1/2 -translate-y-1/2 grid h-11 w-11 place-items-center rounded-full bg-background/90 border border-border shadow-md hover:bg-background md:-left-5">
-        <ChevronLeft className="h-5 w-5" />
+      <button 
+        onClick={prev} 
+        aria-label="Previous" 
+        className="absolute left-0 top-1/2 -translate-y-1/2 grid h-7 w-7 place-items-center rounded-full bg-background/90 border border-border shadow-md hover:bg-background sm:left-1 sm:h-8 sm:w-8 md:left-2 md:h-11 md:w-11 md:-left-5"
+      >
+        <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
       </button>
-      <button onClick={next} aria-label="Next" className="absolute right-2 top-1/2 -translate-y-1/2 grid h-11 w-11 place-items-center rounded-full bg-background/90 border border-border shadow-md hover:bg-background md:-right-5">
-        <ChevronRight className="h-5 w-5" />
+      <button 
+        onClick={next} 
+        aria-label="Next" 
+        className="absolute right-0 top-1/2 -translate-y-1/2 grid h-7 w-7 place-items-center rounded-full bg-background/90 border border-border shadow-md hover:bg-background sm:right-1 sm:h-8 sm:w-8 md:right-2 md:h-11 md:w-11 md:-right-5"
+      >
+        <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
       </button>
 
       <div className="mt-5 flex justify-center gap-2">
@@ -345,14 +559,14 @@ function ActivitiesPage() {
 
       <section className="bg-background py-20 md:py-24">
         <div className="container-page">
-          <Reveal><SectionHeading eyebrow="Completed" title="Programmes that have already lit the path" subtitle="Swipe through the work our community has carried out — every image tells the story of an idea that became real." /></Reveal>
+          <Reveal><SectionHeading eyebrow="Completed" title="Programmes that have already lit the path" subtitle="Swipe through the work our community has carried out - every image tells the story of an idea that became real." /></Reveal>
           <Carousel items={COMPLETED} accent="completed" onOpen={(i) => setLightbox(COMPLETED[i])} />
         </div>
       </section>
 
       <section className="bg-secondary/40 py-20 md:py-24">
         <div className="container-page">
-          <Reveal><SectionHeading eyebrow="Ongoing" title="Walking the path right now" subtitle="The programmes we are running this season — quiet, steady, every week." /></Reveal>
+          <Reveal><SectionHeading eyebrow="Ongoing" title="Walking the path right now" subtitle="The programmes we are running this season - quiet, steady, every week." /></Reveal>
           <Carousel items={ONGOING} accent="ongoing" onOpen={(i) => setLightbox(ONGOING[i])} />
         </div>
       </section>

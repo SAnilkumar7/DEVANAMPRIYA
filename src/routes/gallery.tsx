@@ -203,7 +203,7 @@ import welfare from "../assets/welfare.jpg";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — DEVANAMPRIYA" },
+      { title: "Gallery - DEVANAMPRIYA" },
       { name: "description", content: "Photographs from our events, community service, education and welfare programmes." },
       { property: "og:title", content: "Gallery — DEVANAMPRIYA" },
       { property: "og:description", content: "Moments of compassion in action." },

@@ -11,7 +11,7 @@ export function HeroSlider() {
       <div className="relative w-screen left-1/2 -translate-x-1/2">
         <img
           src={heroCover}
-          alt="Lord Buddha, Emperor Ashoka and Dr. B. R. Ambedkar with the Ashoka Chakra"
+          alt="Lord Buddha, Samrat Ashok and Dr. B. R. Ambedkar with the Ashoka Chakra"
           className="block w-full h-auto"
         />
       </div>

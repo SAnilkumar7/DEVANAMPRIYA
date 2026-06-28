@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — DEVANAMPRIYA" },
+      { title: "Contact - DEVANAMPRIYA" },
       { name: "description", content: "Reach out to DEVANAMPRIYA. Volunteer, donate, or simply say hello." },
       { property: "og:title", content: "Contact DEVANAMPRIYA" },
       { property: "og:description", content: "Volunteer, donate or get in touch." },
@@ -19,9 +19,9 @@ export const Route = createFileRoute("/contact")({
 });
 
 const FAQS = [
-  { q: "How can I volunteer with Devanampriya?", a: "Fill the volunteer registration form below — our coordinator will reach out within 48 hours to match you with a programme that fits your time and skills." },
+  { q: "How can I volunteer with Devanampriya?", a: "Fill the volunteer registration form below - our coordinator will reach out within 48 hours to match you with a programme that fits your time and skills." },
   { q: "Are donations tax-deductible?", a: "Yes. All donations are eligible for 80G tax exemption under Indian law. A receipt is shared within 7 working days." },
-  { q: "Do I need prior knowledge of Buddhism?", a: "Not at all. Our work is rooted in universal values — compassion, equality and service. Everyone is welcome." },
+  { q: "Do I need prior knowledge of Buddhism?", a: "Not at all. Our work is rooted in universal values - compassion, equality and service. Everyone is welcome." },
   { q: "Can my organisation partner with you?", a: "Absolutely. Write to partnerships@devanampriya.org with a brief about your work and proposed collaboration." },
 ];
 
@@ -43,7 +43,7 @@ function ContactPage() {
           <Reveal>
             <span className="eyebrow">Contact</span>
             <h1 className="mt-4 max-w-3xl text-4xl font-semibold sm:text-5xl md:text-6xl">Let's walk the <span className="text-gradient-gold">path</span> together.</h1>
-            <p className="mt-5 max-w-xl text-lg text-white/80">Volunteer, donate, partner, or simply share a thought — we'd love to hear from you.</p>
+            <p className="mt-5 max-w-xl text-lg text-white/80">Volunteer, donate, partner, or simply share a thought - we'd love to hear from you.</p>
           </Reveal>
         </div>
       </section>

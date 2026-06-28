@@ -1,4 +1,4 @@
-@import "tailwindcss" source(none);
+@import "tailwindcss";
 @source "../src";
 @import "tw-animate-css";
 
@@ -159,10 +159,10 @@
   text-transform: uppercase;
   font-weight: 600;
   color: var(--gold);
-  &::before {
+  /* &::before {
     content: "";
     width: 28px;
     height: 1px;
     background: var(--gold);
-  }
+  } */
 }
